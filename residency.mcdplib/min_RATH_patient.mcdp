@@ -1,0 +1,8 @@
+mcdp {
+    provides resulting_RATH_patient [hours/week]
+    
+    requires RATH_patient_constrained_hrs_wk [hours/week]
+    requires RATH_patient_constrained_FATH [hours/week]
+    
+    provided resulting_RATH_patient ≤ min(required RATH_patient_constrained_hrs_wk, required RATH_patient_constrained_FATH)
+}
