@@ -1,0 +1,13 @@
+mcdp{
+  #Functionalities
+  provides number_of_residents_fromRatio [dimensionless]
+
+  #Resources
+  requires number_of_faculty [dimensionless]
+
+  #Constants
+  faculty_student_ratio = 4 [dimensionless]
+
+  #Constraints
+  required number_of_faculty ≥ provided number_of_residents_fromRatio * required faculty_student_ratio
+}
