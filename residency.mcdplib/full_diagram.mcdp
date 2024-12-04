@@ -8,6 +8,7 @@ mcdp {
     
     requires total_cost [USD]
     requires resident_hours_per_week [hours/week]
+    requires faculty_hours_per_week [hours/week]
     
     sub main_split = instance `split_total_cost
     sub R_split = instance `num_resident_constrained_by_cost
@@ -25,16 +26,20 @@ mcdp {
     # Resources from the diagram level 
     required total_cost ≥ total_cost required by main_split
     required resident_hours_per_week ≥ total_RATH_per_resident required by split_R_hours
+    required faculty_hours_per_week ≥ faculty_hours_per_week required by faculty_management
     
     # direct costs where they need to go
     cost_of_faculty_total provided by main_split ≥ cost_faculty_total required by F_split 
-    cost_of_faculty_total provided by main_split ≥ cost_of_residents_total required by R_split
+    cost_of_residents_total provided by main_split ≥ cost_of_residents_total required by R_split
     
-    #
-    num_of_faculty provided by F_split ≥ number_of_faculty required by num_R_constrained_F
+    # Faculty
+    num_of_faculty provided by F_split ≥ num_faculty required by faculty_management
+    num_faculty provided by faculty_management ≥ number_of_faculty required by num_R_constrained_F
     
-    #
+    # allocating FATH
     FATH provided by faculty_management ≥ FATH required by split_FATH 
+    total_FATH_patient provided by split_FATH ≥ total_FATH_patient required by num_R_constrained_patient
+    total_FATH_class provided by split_FATH ≥ total_FATH_class required by num_R_constrained_classroom
     
     # minimum of "Number of Residents 
     number_of_residents_cost provided by R_split ≥ res_constrained_by_cost required by min_num_R
