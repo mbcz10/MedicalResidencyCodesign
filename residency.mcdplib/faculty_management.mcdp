@@ -1,0 +1,10 @@
+mcdp {
+    provides FATH [hours/week]
+    provides num_faculty[Nat]
+    
+    requires faculty_hours_per_week [hours/week]
+    requires num_faculty [Nat]
+    
+    required num_faculty ≥ provided num_faculty
+    provided FATH ≤ required faculty_hours_per_week * required num_faculty
+}
