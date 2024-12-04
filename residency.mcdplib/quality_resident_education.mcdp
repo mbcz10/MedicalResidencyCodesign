@@ -1,0 +1,5 @@
+mcdp {
+    provides quality_resident_education [dimensionless]
+    
+    required hrs
+}
