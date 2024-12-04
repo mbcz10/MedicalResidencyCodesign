@@ -1,8 +1,0 @@
-title: Query query_dummy.mcdp_000
-description: ''
-model: '`dummy.mcdp'
-query:
-  query_type: FixFunMinRes
-  min_f: {100 USD}
-  max_r: {}
-  optimize_for: ['W]

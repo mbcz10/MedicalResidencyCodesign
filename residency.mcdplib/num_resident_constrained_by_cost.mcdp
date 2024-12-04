@@ -1,0 +1,11 @@
+mcdp {
+    #Functionalities
+    provides number_of_residents_cost [dimensionless]
+    provides resident_salary [USD]
+    
+    #Resources
+    requires cost_of_residents_total [USD]
+    
+    #Constraints
+    required cost_of_residents_total ≥ provided number_of_residents_cost * provided resident_salary 
+}
