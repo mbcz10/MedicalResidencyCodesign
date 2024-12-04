@@ -1,6 +1,6 @@
 mcdp {
     #Functionalities
-    provides num_of_faculty [dimensionless]
+    provides num_of_faculty [ℕ]
     provides salary_per_faculty [USD]
     
     #Resources
