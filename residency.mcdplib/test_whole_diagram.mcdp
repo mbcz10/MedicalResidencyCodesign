@@ -1,0 +1,14 @@
+mcdp {
+    provides num_residents [Nat]
+    provides num_faculty [Nat]
+    provides salaryR [USD]
+    provides salaryF [USD]
+    
+    requires total_cost [USD]
+    
+    sub main_split = instance `split_total_cost
+    sub R_split = instance `num_resident_constrained_by_cost
+    sub F_split = instance `split_faculty_cost
+    
+    required total_cost ≥ total_cost required by main_split
+}
