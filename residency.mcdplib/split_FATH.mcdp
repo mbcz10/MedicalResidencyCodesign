@@ -1,0 +1,8 @@
+mcdp {
+    provides total_FATH_class [hours]
+    provides total_FATH_patient [hours]
+    
+    requires FATH [hours]
+    
+    required FATH ≥ provided total_FATH_class + provided total_FATH_patient
+}
