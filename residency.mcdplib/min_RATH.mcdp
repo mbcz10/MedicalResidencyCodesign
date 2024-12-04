@@ -1,0 +1,8 @@
+mcdp {
+    provides resulting_RATH_classroom [hours/week]
+    
+    requires RATH_class_constrained_hrs_wk [hours/week]
+    requires RATH_class_constrained_FATH [hours/week]
+    
+    provided resulting_RATH_classroom ≤ min(required RATH_class_constrained_hrs_wk, required RATH_class_constrained_FATH)
+}
