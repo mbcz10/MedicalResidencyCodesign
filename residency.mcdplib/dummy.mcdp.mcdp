@@ -1,0 +1,11 @@
+mcdp {
+
+provides money [USD]
+
+requires energy [W]
+
+money_to_energy = 2.0 USD/W
+
+provided money ≤ required energy 
+    
+}

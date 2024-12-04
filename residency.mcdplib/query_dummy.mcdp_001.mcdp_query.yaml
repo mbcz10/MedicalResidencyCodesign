@@ -1,0 +1,8 @@
+title: Query query_dummy.mcdp_001
+description: ''
+model: '`dummy.mcdp'
+query:
+  query_type: FixFunMinRes
+  max_r: {}
+  min_f:9 100.0 UD
+  optimize_for: ['energy']
