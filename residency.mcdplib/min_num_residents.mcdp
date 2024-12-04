@@ -1,0 +1,11 @@
+mcdp {
+    provides resulting_num_residents [N]
+    
+    requires res_constrained_by_cost [N]
+    requires res_constrained_by_ratio [N]
+    requires res_constrained_by_classroom [N]
+    requires res_constrained_by_patient [N]
+    
+    provided resulting_num_residents ≤ min(required res_constrained_by_cost, required res_constrained_by_ratio, required res_constrained_by_classroom, required res_constrained_by_patient)
+     
+}
