@@ -43,9 +43,13 @@ mcdp {
     total_FATH_patient provided by split_FATH ≥ total_FATH_patient required by num_R_constrained_patient
     total_FATH_class provided by split_FATH ≥ total_FATH_class required by num_R_constrained_classroom
     
-    # minimum of RATHs
+    # minimum of RATH class
     RATH_class_per_resident provided by split_R_hours ≥ RATH_class_constrained_hrs_wk required by min_RATH_class
     resident_hours_per_week_class provided by num_R_constrained_classroom ≥ RATH_class_constrained_FATH required by min_RATH_class
+    
+    # minimum of RATH patients
+    RATH_patient_per_resident provided by split_R_hours ≥ RATH_patient_constrained_hrs_wk required by min_RATH_patient
+    resident_hours_per_week_patient provided by num_R_constrained_patient ≥ RATH_patient_constrained_FATH required by min_RATH_patient
     
     # minimum of "Number of Residents" 
     number_of_residents_cost provided by R_split ≥ res_constrained_by_cost required by min_num_R
