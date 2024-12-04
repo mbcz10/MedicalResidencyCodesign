@@ -20,6 +20,8 @@ mcdp {
     sub faculty_management = instance `faculty_management
     sub split_R_hours = instance `split_resident_hours
     sub split_FATH = instance `split_FATH
+    sub min_RATH_class = instance `min_RATH_class
+    sub min_RATH_patient = instance `min_RATH_patient
     
     
     ### connecting diagrams
