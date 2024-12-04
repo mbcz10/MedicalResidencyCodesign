@@ -9,5 +9,5 @@ mcdp{
   faculty_student_ratio = 4 [dimensionless]
 
   #Constraints
-  required number_of_faculty ≥ provided number_of_residents_fromRatio * required faculty_student_ratio
+  required number_of_faculty ≥ provided number_of_residents_fromRatio * faculty_student_ratio
 }
