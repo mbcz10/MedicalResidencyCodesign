@@ -12,8 +12,17 @@ mcdp {
     sub main_split = instance `split_total_cost
     sub R_split = instance `num_resident_constrained_by_cost
     sub F_split = instance `split_faculty_cost
+    sub min_num_R = instance `min_num_residents
+    sub num_R_constrained_F = instance `num_resident_constrained_by_faculty
+    sub num_R_constrained_patient = instance `num_resident_constrained_by_patient_teaching
+    sub num_R_constrained_classroom = instance `num_resident_constrained_by_classroom_teaching
+    sub faculty_management = instance `faculty_management
+    sub split_R_hours = instance `split_resident_hours
     
+    
+    ## connecting diagrams
     required total_cost ≥ total_cost required by main_split
+    required resident_hours_per_week ≥ total_RATH_per_resident required by split_R_hours
     #
     cost_of_faculty_total provided by main_split ≥ cost_faculty_total required by F_split 
     #

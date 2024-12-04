@@ -1,8 +1,8 @@
 mcdp{
-  provides RATH_class_per_resident [hours]
-  provides RATH_patient_per_resident [hours]
+  provides RATH_class_per_resident [hours/week]
+  provides RATH_patient_per_resident [hours/week]
 
-  requires total_RATH_per_resident [hours]
+  requires total_RATH_per_resident [hours/week]
 
   required total_RATH_per_resident ≥ provided RATH_class_per_resident + provided RATH_patient_per_resident
 }
