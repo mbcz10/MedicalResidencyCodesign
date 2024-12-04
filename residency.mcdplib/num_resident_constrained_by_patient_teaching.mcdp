@@ -1,0 +1,14 @@
+mcdp {
+    #Functionalities
+    provides quality_of_patient_care [dimensionless]
+    provides number_of_patients_seen [dimensionless]
+    provides quality_of_ATH_patient [dimensionless]
+    provides number_of_residents_constrained_patient [dimensionless]
+    provides resident_hours_per_week_patient [hours/week]
+    
+    #Resources
+    requires total_FATH_patient [hours/week]
+    
+    #Constraints
+    required total_FATH_patient ≥ provided number_of_residents_constrained_patient * provided resident_hours_per_week_patient
+}
