@@ -11,4 +11,6 @@ mcdp {
     sub F_split = instance `split_faculty_cost
     
     required total_cost ≥ total_cost required by main_split
+    cost_of_faculty_total provided by main_split ≥ cost_faculty_total required by F_split 
+    
 }
