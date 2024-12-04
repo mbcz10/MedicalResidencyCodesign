@@ -1,3 +1,11 @@
 mcdp {
+    #Functionalities
+    provides num_of_faculty [dimensionless]
+    provides salary_per_faculty [USD]
     
+    #Resources
+    requires cost_faculty_total [USD]
+    
+    #Constraints
+    required cost_faculty_total ≥ provided salary_per_faculty * provided num_of_faculty
 }
