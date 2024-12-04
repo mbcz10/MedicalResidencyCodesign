@@ -1,16 +1,22 @@
 mcdp {
     provides num_residents [Nat]
-    provides num_faculty [Nat]
+    #provides num_faculty [Nat]
     provides salaryR [USD]
     provides salaryF [USD]
+    provides quality_patient_care [dimensionless]
+    provides num_patients_seen [Nat]
     
     requires total_cost [USD]
+    requires resident_hours_per_week [hours/week]
     
     sub main_split = instance `split_total_cost
     sub R_split = instance `num_resident_constrained_by_cost
     sub F_split = instance `split_faculty_cost
     
     required total_cost ≥ total_cost required by main_split
+    #
     cost_of_faculty_total provided by main_split ≥ cost_faculty_total required by F_split 
+    #
+    
     
 }
