@@ -1,13 +1,13 @@
 mcdp {
     # Functionalities
-    provides quality_of_ATH
-    provides number_of_residents
-    provides resident_hours_per_week_class
+    provides quality_of_ATH [dimensionless]
+    provides number_of_residents [dimensionless]
+    provides resident_hours_per_week_class [hours/week]
     
     # Resources
-    requires total_FATH_class
+    requires total_FATH_class [hours/week]
     
     # Constraints
-    required total_FATH_class ≥ number_of_residents * resident_hours_per_week_class
+    required total_FATH_class ≥ provided number_of_residents * provided resident_hours_per_week_class
     
 }
