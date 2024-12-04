@@ -1,0 +1,8 @@
+mcdp{
+  provides RATH_class_per_resident
+  provides RATH_patient_per_resident
+
+  requires total_RATH_per_resident
+
+  required total_RATH_per_resident ≥ provided RATH_class_per_resident + provided RATH_patient_per_resident
+}
