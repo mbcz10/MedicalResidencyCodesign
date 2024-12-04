@@ -1,0 +1,11 @@
+mcdp{
+  #Functionalities
+  provides cost_of_residents_total
+  provides cost_of_faculty_total
+
+  #Resources
+  requires total_cost
+
+  #Constraints
+  required total_cost ≥ provided cost_of_residents_total + provided cost_of_faculty_total
+}
