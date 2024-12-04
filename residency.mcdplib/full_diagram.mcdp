@@ -18,18 +18,36 @@ mcdp {
     sub num_R_constrained_classroom = instance `num_resident_constrained_by_classroom_teaching
     sub faculty_management = instance `faculty_management
     sub split_R_hours = instance `split_resident_hours
+    sub split_FATH = instance `split_FATH
     
     
     ### connecting diagrams
     # Resources from the diagram level 
     required total_cost ≥ total_cost required by main_split
     required resident_hours_per_week ≥ total_RATH_per_resident required by split_R_hours
-    #
+    
+    # direct costs where they need to go
     cost_of_faculty_total provided by main_split ≥ cost_faculty_total required by F_split 
+    cost_of_faculty_total provided by main_split ≥ cost_of_residents_total required by R_split
+    
+    #
+    num_of_faculty provided by F_split ≥ number_of_faculty required by num_R_constrained_F
+    
+    #
+    FATH provided by faculty_management ≥ FATH required by split_FATH 
+    
     # minimum of "Number of Residents 
     number_of_residents_cost provided by R_split ≥ res_constrained_by_cost required by min_num_R
     number_of_residents_fromRatio provided by num_R_constrained_F ≥ res_constrained_by_ratio required by min_num_R
     number_of_residents_constrained_patient provided by num_R_constrained_patient ≥ res_constrained_by_patient required by min_num_R
     number_of_residents provided by num_R_constrained_classroom ≥ res_constrained_by_classroom required by min_num_R
+    
+    # Functionalities from the diagram level
+    quality_of_patient_care provided by num_R_constrained_patient ≥ provided quality_patient_care
+    resulting_num_residents provided by min_num_R ≥ provided num_residents
+    resident_salary provided by R_split ≥ provided salaryR
+    salary_per_faculty provided by F_split ≥ provided salaryF
+    number_of_patients_seen provided by num_R_constrained_patient ≥ provided num_patients_seen
+    
     
 }
