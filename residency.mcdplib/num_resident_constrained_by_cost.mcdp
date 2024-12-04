@@ -1,6 +1,6 @@
 mcdp {
     #Functionalities
-    provides number_of_residents_cost [dimensionless]
+    provides number_of_residents_cost [Nat]
     provides resident_salary [USD]
     
     #Resources
