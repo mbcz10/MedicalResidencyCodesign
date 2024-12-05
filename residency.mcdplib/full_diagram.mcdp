@@ -60,7 +60,10 @@ mcdp {
     number_of_residents provided by num_R_constrained_classroom ≥ res_constrained_by_classroom required by min_num_R
     
     # Quality of res education
-    quality_of_ATH provided by num_R_constrained_classroom ≥ hrs_class required by quality_res_education
+    quality_of_ATH provided by num_R_constrained_classroom ≥ quality_ATH_class required by quality_res_education
+    resulting_RATH_classroom provided by min_RATH_class ≥ hrs_class required by quality_res_education
+    quality_of_ATH_patient provided by num_R_constrained_patient ≥ quality_ATH_patients required by quality_res_education
+    resulting_RATH_patient provided by min_RATH_patient ≥ hrs_patients required by quality_res_education
     
     # Functionalities from the diagram level
     quality_of_patient_care provided by num_R_constrained_patient ≥ provided quality_patient_care

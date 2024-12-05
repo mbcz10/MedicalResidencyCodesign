@@ -1,9 +1,9 @@
 mcdp {
     #Functionalities
     provides quality_of_patient_care [dimensionless]
-    provides number_of_patients_seen [dimensionless]
+    provides number_of_patients_seen [Nat]
     provides quality_of_ATH_patient [dimensionless]
-    provides number_of_residents_constrained_patient [dimensionless]
+    provides number_of_residents_constrained_patient [Nat]
     provides resident_hours_per_week_patient [hours/week]
     
     #Resources
