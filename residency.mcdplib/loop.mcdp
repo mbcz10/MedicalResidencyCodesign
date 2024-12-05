@@ -1,0 +1,7 @@
+mcdp {
+    provides budget [USD]
+    
+    requires num_residents [Nat]
+    requires num_patients_seen [Nat]
+
+}
