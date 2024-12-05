@@ -1,7 +1,7 @@
 mcdp {
     # Functionalities
-    provides quality_of_ATH [hours/week]
-    provides number_of_residents [dimensionless]
+    provides quality_of_ATH [dimensionless]
+    provides number_of_residents [Nat]
     provides resident_hours_per_week_class [hours/week]
     
     # Resources

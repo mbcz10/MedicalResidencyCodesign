@@ -1,0 +1,82 @@
+mcdp {
+    # provides num_residents [Nat]
+    provides salaryR [USD]
+    provides salaryF [USD]
+    provides quality_resident_education [dimensionless]
+    provides quality_patient_care [dimensionless]
+    # provides num_patients_seen [Nat]
+    
+    # requires total_cost [USD]
+    requires resident_hours_per_week [hours/week]
+    requires faculty_hours_per_week [hours/week]
+    
+    sub main_split = instance `split_total_cost
+    sub R_split = instance `num_resident_constrained_by_cost
+    sub F_split = instance `split_faculty_cost
+    sub min_num_R = instance `min_num_residents
+    sub num_R_constrained_F = instance `num_resident_constrained_by_faculty
+    sub num_R_constrained_patient = instance`num_resident_constrained_by_patient_teaching
+    sub num_R_constrained_classroom = instance `num_resident_constrained_by_classroom_teaching
+    sub faculty_management = instance `faculty_management
+    sub split_R_hours = instance `split_resident_hours
+    sub split_FATH = instance `split_FATH
+    sub min_RATH_class = instance `min_RATH_class
+    sub min_RATH_patient = instance `min_RATH_patient
+    sub quality_res_education = instance `quality_resident_education
+    sub loop = instance `loop
+    
+    ### connecting diagrams
+    # Resources from the diagram level 
+    required total_cost ≥ total_cost required by main_split
+    required resident_hours_per_week ≥ total_RATH_per_resident required by split_R_hours
+    required faculty_hours_per_week ≥ faculty_hours_per_week required by faculty_management
+    
+    # direct costs where they need to go
+    cost_of_faculty_total provided by main_split ≥ cost_faculty_total required by F_split 
+    cost_of_residents_total provided by main_split ≥ cost_of_residents_total required by R_split
+    
+    # Faculty
+    num_of_faculty provided by F_split ≥ num_faculty required by faculty_management
+    num_faculty provided by faculty_management ≥ number_of_faculty required by num_R_constrained_F
+    
+    # allocating FATH
+    FATH provided by faculty_management ≥ FATH required by split_FATH 
+    total_FATH_patient provided by split_FATH ≥ total_FATH_patient required by num_R_constrained_patient
+    total_FATH_class provided by split_FATH ≥ total_FATH_class required by num_R_constrained_classroom
+    
+    # minimum of RATH class
+    RATH_class_per_resident provided by split_R_hours ≥ RATH_class_constrained_hrs_wk required by min_RATH_class
+    resident_hours_per_week_class provided by num_R_constrained_classroom ≥ RATH_class_constrained_FATH required by min_RATH_class
+    
+    # minimum of RATH patients
+    RATH_patient_per_resident provided by split_R_hours ≥ RATH_patient_constrained_hrs_wk required by min_RATH_patient
+    resident_hours_per_week_patient provided by num_R_constrained_patient ≥ RATH_patient_constrained_FATH required by min_RATH_patient
+    
+    # minimum of "Number of Residents" 
+    number_of_residents_cost provided by R_split ≥ res_constrained_by_cost required by min_num_R
+    number_of_residents_fromRatio provided by num_R_constrained_F ≥ res_constrained_by_ratio required by min_num_R
+    number_of_residents_constrained_patient provided by num_R_constrained_patient ≥ res_constrained_by_patient required by min_num_R
+    number_of_residents provided by num_R_constrained_classroom ≥ res_constrained_by_classroom required by min_num_R
+    
+    # Quality of res education
+    quality_of_ATH provided by num_R_constrained_classroom ≥ quality_ATH_class required by quality_res_education
+    resulting_RATH_classroom provided by min_RATH_class ≥ hrs_class required by quality_res_education
+    quality_of_ATH_patient provided by num_R_constrained_patient ≥ quality_ATH_patients required by quality_res_education
+    resulting_RATH_patient provided by min_RATH_patient ≥ hrs_patients required by quality_res_education
+    
+    # Functionalities from the diagram level
+    quality_of_patient_care provided by num_R_constrained_patient ≥ provided quality_patient_care
+    # resulting_num_residents provided by min_num_R ≥ provided num_residents
+    resident_salary provided by R_split ≥ provided salaryR
+    salary_per_faculty provided by F_split ≥ provided salaryF
+    # number_of_patients_seen provided by num_R_constrained_patient ≥ provided num_patients_seen
+    quality_resident_education provided by quality_res_education ≥ provided quality_resident_education
+    
+    # Loop
+    resulting_num_residents provided by min_num_R ≥ num_residents required by loop
+    number_of_patients_seen provided by num_R_constrained_patient ≥ num_patients_seen required by loop
+    
+    constant base_funding = 1000000 [USD]
+    total_budget = base_funding + (total_cost required by main_split)
+    budget provided by loop ≥ total_budget
+}
