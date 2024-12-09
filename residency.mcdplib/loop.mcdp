@@ -2,12 +2,13 @@ mcdp {
     # Functionalities
     provides budget [USD]
 
-
     # Resources
     requires num_residents [Nat]
     requires num_patients_seen [Nat]
     
     # Constants
+    res_extra = # additional budget per resident graduated (per year)
+    patient = # addtional budget per patient seen
     
     # Constraints
 
