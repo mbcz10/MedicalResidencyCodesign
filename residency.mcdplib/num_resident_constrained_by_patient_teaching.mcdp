@@ -1,8 +1,7 @@
 mcdp {
     #Functionalities
-    provides quality_of_patient_care [dimensionless]
     provides number_of_patients_seen [1/week]
-    provides quality_of_ATH_patient [dimensionless]
+    #provides quality_of_ATH_patient [dimensionless]
     provides number_of_residents_constrained_patient [Nat]
     provides resident_hours_per_week_patient [hours/week]
     
@@ -11,10 +10,11 @@ mcdp {
     
 
     #Constants
-    time_per_patient = 0.5 [hours]
+    constant time_per_patient = 0.5 [hours]
      
     #Constraints
     required total_FATH_patient ≥ provided number_of_residents_constrained_patient * provided resident_hours_per_week_patient
-    provided number_of_patients_seen ≥ required total_FATH_patient / time_per_patient
+    provided number_of_patients_seen ≤ required total_FATH_patient / time_per_patient 
+    
  
 }

@@ -1,6 +1,6 @@
 mcdp {
     provides quality_resident_education [dimensionless]
-    
+
     requires hrs_class [hours/week]
     requires hrs_patients [hours/week]
     #requires quality_ATH_class [dimensionless]

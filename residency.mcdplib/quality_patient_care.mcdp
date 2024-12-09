@@ -1,0 +1,18 @@
+mcdp {
+    #Functionalities
+    provides quality_of_patient_care [dimensionless]
+    
+    #Resources 
+    requires num_residents [dimensionless]
+    
+    #Constants
+    constant baseline_quality = 0.8 [dimensionless]
+    constant weight = 0.2
+    constant ideal_num_R_patPov = 2
+    constant ideal_num_R_medicalPov = 4
+    
+    #Constraints
+    provided quality_of_patient_care ≤ min(
+    baseline_quality + (weight* (required num_residents/ideal_num_R_patPov)),
+    baseline_quality + (weight2* (required num_residents/ideal_num_R_medicalPov)))
+}
