@@ -4,12 +4,13 @@ mcdp {
 
     # Resources
     requires num_residents [Nat]
-    requires num_patients_seen [Nat]
+    requires num_patients_seen [1/week]
     
     # Constants
     res_extra = 60000 [USD] # additional budget per resident graduated (per year)
     patient_extra = 250 [USD] # addtional budget per patient seen
+    num_weeks = 48 [week]
     
     # Constraints
-    provided budget ≤ res_extra* required num_residents + patient_extra * required num_patients_seen
+    provided budget ≤ res_extra* required num_residents + patient_extra * required num_patients_seen * num_weeks
 }
