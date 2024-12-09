@@ -1,13 +1,17 @@
 mcdp {
     # Functionalities
-    provides quality_of_ATH [dimensionless]
+    #provides quality_of_ATH [dimensionless]
     provides number_of_residents [Nat]
     provides resident_hours_per_week_class [hours/week]
     
     # Resources
     requires total_FATH_class [hours/week]
     
+    # Constants 
+    #c1 = 0.25 [dimensionless]
+    #intermediary = required total_FATH_class * provided quality_of_ATH
+    
     # Constraints
     required total_FATH_class ≥ provided number_of_residents * provided resident_hours_per_week_class
-    
+    #intermediary = required total_FATH_class * provided quality_of_ATH ≤ c1*provided resident_hours_per_week_class * provided number_of_residents 
 }

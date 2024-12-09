@@ -3,8 +3,8 @@ mcdp {
     
     requires hrs_class [hours/week]
     requires hrs_patients [hours/week]
-    requires quality_ATH_class [dimensionless]
-    requires quality_ATH_patients [dimensionless]
+    #requires quality_ATH_class [dimensionless]
+    #requires quality_ATH_patients [dimensionless]
     
     c1 = 0.25 [dimensionless] # importance/weight of class time
     c2 = 0.75 [dimensionless] # importance/weight of patient time
