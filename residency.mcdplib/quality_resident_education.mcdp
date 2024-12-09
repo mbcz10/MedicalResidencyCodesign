@@ -12,7 +12,7 @@ mcdp {
     ideal_classtime = 20 [hours/week]
     ideal_patienttime = 60 [hours/week]
     
-    provided quality_resident_education ≤ c1*(ideal_quality - (ideal_classtime - required hrs_class)/ideal_classtime) + c2*(ideal_quality - (ideal_patienttime - required hrs_patients)/ideal_patienttime)
+    provided quality_resident_education ≤ c1*(required hrs_class/ideal_classtime) + c2*(required hrs_patients/ideal_patienttime )
     
     #test
     #provided quality_resident_education ≤ ideal_quality - (ideal_classtime - required hrs_class)/ideal_classtime

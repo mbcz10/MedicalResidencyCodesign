@@ -24,6 +24,7 @@ mcdp {
     sub min_RATH_patient = instance `min_RATH_patient
     sub quality_res_education = instance `quality_resident_education
     sub loop = instance `loop
+    sub qual_pat_care = instance `quality_patient_care
     
     ### connecting diagrams
     # Resources from the diagram level 
@@ -64,6 +65,11 @@ mcdp {
     quality_of_ATH_patient provided by num_R_constrained_patient ≥ quality_ATH_patients required by quality_res_education
     resulting_RATH_patient provided by min_RATH_patient ≥ hrs_patients required by quality_res_education
     
+    # Quality of patient care 
+    quality_of_patient_care provided by qual_pat_care ≥ provided quality_patient_care
+    num_residents required by qual_pat_care ≤ resulting_num_residents provided by min_num_R
+    
+    
     # Functionalities from the diagram level
     quality_of_patient_care provided by num_R_constrained_patient ≥ provided quality_patient_care
     # resulting_num_residents provided by min_num_R ≥ provided num_residents
@@ -71,6 +77,7 @@ mcdp {
     salary_per_faculty provided by F_split ≥ provided salaryF
     # number_of_patients_seen provided by num_R_constrained_patient ≥ provided num_patients_seen
     quality_resident_education provided by quality_res_education ≥ provided quality_resident_education
+    
     
     # Loop
     resulting_num_residents provided by min_num_R ≥ num_residents required by loop

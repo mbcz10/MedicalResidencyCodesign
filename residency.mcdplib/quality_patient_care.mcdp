@@ -12,7 +12,5 @@ mcdp {
     constant ideal_num_R_medicalPov = 4
     
     #Constraints
-    provided quality_of_patient_care ≤ min(
-    baseline_quality + (weight* (required num_residents/ideal_num_R_patPov)),
-    baseline_quality + (weight2* (required num_residents/ideal_num_R_medicalPov)))
+    provided quality_of_patient_care ≤ min(baseline_quality + (weight* (required num_residents/ideal_num_R_patPov)),baseline_quality + (weight* (required num_residents/ideal_num_R_medicalPov)))
 }
