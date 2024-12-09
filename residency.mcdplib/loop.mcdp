@@ -7,9 +7,9 @@ mcdp {
     requires num_patients_seen [Nat]
     
     # Constants
-    res_extra = # additional budget per resident graduated (per year)
-    patient = # addtional budget per patient seen
+    res_extra = 60000 [USD] # additional budget per resident graduated (per year)
+    patient_extra = 250 [USD] # addtional budget per patient seen
     
     # Constraints
-
+    provided budget ≤ res_extra* required num_residents + patient_extra * required num_patients_seen
 }
