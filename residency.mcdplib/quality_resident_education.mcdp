@@ -8,7 +8,6 @@ mcdp {
     
     c1 = 0.25 [dimensionless] # importance/weight of class time
     c2 = 0.75 [dimensionless] # importance/weight of patient time
-    ideal_quality = 1 [dimensionless]
     ideal_classtime = 20 [hours/week]
     ideal_patienttime = 60 [hours/week]
     
