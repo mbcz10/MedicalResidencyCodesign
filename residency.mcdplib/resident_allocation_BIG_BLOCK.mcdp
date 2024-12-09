@@ -1,0 +1,35 @@
+mcdp {
+    provides quality_of_R_education
+    provides quality_of_patient_care
+    provides num_pat_seen
+    provides num_R
+    provides R_salary
+    
+    requires resident_hours_per_week [hours/week]
+    requires num_faculty [
+    requires cost_R_faculty
+    requires total_FATH_class
+    requires total_FATH_patient
+    
+
+    sub R_split = instance `num_resident_constrained_by_cost
+
+    sub min_num_R = instance `min_num_residents
+    sub num_R_constrained_F = instance `num_resident_constrained_by_faculty
+    sub num_R_constrained_patient = instance`num_resident_constrained_by_patient_teaching
+    sub num_R_constrained_classroom = instance `num_resident_constrained_by_classroom_teaching
+    sub split_R_hours = instance `split_resident_hours
+    sub split_FATH = instance `split_FATH
+    sub min_RATH_class = instance `min_RATH_class
+    sub min_RATH_patient = instance `min_RATH_patient
+    sub quality_res_education = instance `quality_resident_education
+    sub qual_pat_care = instance `quality_patient_care
+    
+    
+   # High resources 
+   required resident_hours_per_week
+    requires num_faculty
+    requires cost_R_faculty
+    requires total_FATH_class
+    requires total_FATH_patient
+}

@@ -1,0 +1,17 @@
+title: Query query_full_diagram_w_loop_001
+description: ''
+model: '`full_diagram_w_loop'
+query:
+  query_type: FixResMaxFun
+  min_f:
+    salaryR: "\e[38;5;136m0\e[0m USD"
+    salaryF: "\e[38;5;136m0\e[0m USD"
+    quality_patient_care: 0.800000000 dimensionless
+  max_r:
+    resident_hours_per_week: 80 hours/week
+    faculty_hours_per_week: 110 hours/week
+  optimize_for:
+  - quality_patient_care
+  - quality_resident_education
+  - salaryF
+  - salaryR

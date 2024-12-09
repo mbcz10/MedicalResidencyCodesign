@@ -1,0 +1,18 @@
+title: Query query_faculty_allocation_BIG_BLOCK_000
+description: ''
+model: '`faculty_allocation_BIG_BLOCK'
+query:
+  query_type: FixResMaxFun
+  min_f:
+    faculty_salary: "\e[38;5;136m0\e[0m USD"
+    total_FATH_class: "\e[38;5;136m0\e[0m hours/week"
+    total_FATH_patient: "\e[38;5;136m0\e[0m hours/week"
+    number_of_faculty: "\e[38;5;136m0\e[0m"
+  max_r:
+    F_hours_per_week: 100 hours/week
+    cost_F_total: 850000 USD
+  optimize_for:
+  - faculty_salary
+  - number_of_faculty
+  - total_FATH_class
+  - total_FATH_patient

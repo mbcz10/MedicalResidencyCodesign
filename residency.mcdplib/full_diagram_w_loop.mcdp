@@ -8,6 +8,7 @@ mcdp {
     
     requires resident_hours_per_week [hours/week]
     requires faculty_hours_per_week [hours/week]
+    requires years_to_graduate [years]
     
     sub main_split = instance `split_total_cost
     sub R_split = instance `num_resident_constrained_by_cost
@@ -29,6 +30,7 @@ mcdp {
     # Resources from the diagram level 
     required resident_hours_per_week ≥ total_RATH_per_resident required by split_R_hours
     required faculty_hours_per_week ≥ faculty_hours_per_week required by faculty_management
+    required years_to_graduate ≥ years_to_graduate required by quality_res_education
     
     # direct costs where they need to go
     cost_of_faculty_total provided by main_split ≥ cost_faculty_total required by F_split 

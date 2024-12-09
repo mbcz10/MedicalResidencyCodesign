@@ -1,0 +1,13 @@
+title: Query query_split_total_cost_000
+description: ''
+model: '`split_total_cost'
+query:
+  query_type: FixResMaxFun
+  min_f:
+    cost_of_residents_total: "\e[38;5;136m0\e[0m USD"
+    cost_of_faculty_total: "\e[38;5;136m0\e[0m USD"
+  max_r:
+    total_cost: 1800000 USD
+  optimize_for:
+  - cost_of_faculty_total
+  - cost_of_residents_total

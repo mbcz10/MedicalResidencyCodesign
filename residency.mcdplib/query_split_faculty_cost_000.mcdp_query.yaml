@@ -1,0 +1,12 @@
+title: Query query_split_faculty_cost_000
+description: ''
+model: '`split_faculty_cost'
+query:
+  query_type: FixResMaxFun
+  min_f:
+    salary_per_faculty: "\e[38;5;136m0\e[0m USD"
+  max_r:
+    cost_faculty_total: 100 USD
+  optimize_for:
+  - num_of_faculty
+  - salary_per_faculty

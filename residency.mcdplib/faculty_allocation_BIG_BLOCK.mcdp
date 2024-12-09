@@ -1,0 +1,34 @@
+mcdp {
+    provides faculty_salary [USD]
+    provides total_FATH_class [hours/week]
+    provides total_FATH_patient [hours/week]
+    provides number_of_faculty [Nat]
+    
+    requires F_hours_per_week [hours/week]
+    requires cost_F_total [USD]
+    
+    sub F_split = instance `split_faculty_cost
+    sub faculty_management = instance `faculty_management
+    sub split_FATH = instance `split_FATH
+    
+    # High level resources
+    cost_faculty_total required by F_split ≤ required cost_F_total
+    
+    # Middle
+    faculty_hours_per_week required by faculty_management ≤ required F_hours_per_week
+    num_faculty required by faculty_management ≤ num_of_faculty provided by F_split
+    FATH required by split_FATH ≤ FATH provided by faculty_management
+    
+    
+    # High level functionalities 
+    salary_per_faculty provided by F_split ≥ provided faculty_salary
+    
+    total_FATH_class provided by split_FATH ≥ provided total_FATH_class 
+    total_FATH_patient provided by split_FATH ≥ provided total_FATH_patient
+    
+    num_faculty provided by faculty_management ≥ provided number_of_faculty
+    
+    
+    
+    
+}
