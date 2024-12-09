@@ -81,7 +81,7 @@ mcdp {
     resulting_num_residents provided by min_num_R ≥ num_residents required by loop
     number_of_patients_seen provided by num_R_constrained_patient ≥ num_patients_seen required by loop
     
-    constant base_funding = 1000000 [USD]
+    constant base_funding = 1800000 [USD]
     total_budget = base_funding + (total_cost required by main_split)
     budget provided by loop ≥ total_budget
 }
