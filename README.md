@@ -9,7 +9,7 @@ This project was developed as a final semester project for MIT's fall 2024 class
 
 ## Contact
 Rita Zambrano - mbcz10@mit.edu
-Project Link: 
+Project Link: https://github.com/mbcz10/MedicalResidencyCodesign 
 
 ## Acknowledgements
 Thank you to Professor Gioele Zardini and Yujun Huang for their help with developing and implementing the model. 
