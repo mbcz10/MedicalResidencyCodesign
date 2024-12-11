@@ -42,7 +42,7 @@ To view the entire diagram in more detail please view in the online editor.
 There are still some problems in the formulation. The resource "years in residency" is meant to constrain how long residents are in school, otherwise, "resident hours/week" goes to zero and "budget" goes to infinity. However, "years in residency" is not currently succeeding at this ("resident hours/week" still goes to zero and "budget" still goes to infinity), so that constraint needs to be looked at again. 
 
 Due to the complexity of medical residencies and medicine as a whole, I have made the following assumptions: 
-1. All faculty members and residents are paid the same salary (USD/year not USD/hour)
+1. All faculty members are paid the same salary, and all residents are paid the same salary (They are salaried, meaning that they are paid an annual sum regardless of how many hours they work. This means our units of salary are USD/year not USD/hour)
 2. The faculty-student ratio is 4:1 (as required by ACGME)
 3. The maximum number of resident hours/week is 80 hours/week (as required by ACGME)
 4. Residents work 48 weeks a year
