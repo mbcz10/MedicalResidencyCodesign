@@ -35,7 +35,7 @@ DP divided into smaller, but still overview blocks:
 <img width="973" alt="image" src="https://github.com/user-attachments/assets/9ab4b46d-0cd3-41e6-b9cd-2021058f9c77">
 
 Full diagram: 
-<img width="942" alt="image" src="https://github.com/user-attachments/assets/09f5d3dd-a59a-450d-b99d-bf600eb3c779">
+<img width="942" alt="image" src="https://github.com/user-attachments/assets/09f5d3dd-a59a-450d-b99d-bf600eb3c779">  
 To view the entire diagram in more detail please view in the online editor. 
 
 ## Known Issues, Assumptions, Limitations, and Possible Future Directions
