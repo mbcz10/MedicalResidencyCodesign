@@ -6,7 +6,7 @@ This project was developed as a final semester project for MIT's fall 2024 class
 ## Installation/Running the code
 To install and run MCDPL locally: follow the instructions in section C (Software Manual) in the Computational Monotone Co-Design book (https://storage.zuper.ai/sync/zupermind/mcdp-book/z7-prod/test/last/test-job/public.pdf)  
    OR  
-To use the web-based MCDP editor and solver: 
+To use the web-based MCDP editor and solver (my preferred method): 
 1. Ask for access to the GitHub organization and repo (contact Gioele Zardini or Yujun Huang)
 2. Access the web-editor: https://z7-prod-editor.zuper.ai/editor/
 3. Create your own repo in the organization for your project
@@ -55,7 +55,7 @@ NOTE: depending on what type of scenario you'd like to model, you can quantify "
 2. We currently have a crude way of constraining an "ideal" number of residents per patient interaction (w.r.t. quality of patient care). We want to penalize for having too few residents but also penalize for having too many residents per patient interaction, but this was challenging to do nicely with a monotone function. 
 
 Other possible factors to consider (that are currently not accounted for in the model):
-1. Faculty generally prefer teach patient time instead classroom time because they're paid more for patient hours (and many faculty generally like practical teaching better)
+1. Faculty generally prefer teach patient time instead classroom time because they're paid more for patient hours (and many faculty generally like practical teaching better).
 2. This model treats every year of residency as having the same structure (in terms of classroom time and faculty/student ratios). In reality, a 4th year resident should be very close to fully independent - which means that there are fewer faculty resources required for a 4th year resident than a 1st year resident. It is worth noting that if we look at a WHOLE residency program (with 4 graduating classes in the program at any given time - this assumes 4 years to graduation), the resource requirement should be constant across years since the older students and younger student should average each other out.
 
 ## Contact
