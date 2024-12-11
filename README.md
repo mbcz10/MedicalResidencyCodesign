@@ -52,6 +52,7 @@ Due to the complexity of medical residencies and medicine as a whole, I have mad
 There were also limitations in the granularity of the functions and models used to describe certain interactions. (We had many "back of the envelope" calculations):
 1. We need a better way of quantifying "quality of resident education" and "quality of patient care." In the current model, "quality" is represented as a value between 0 and 1 such that 1 represents 100% of quality potential fulfilled and 0 represents 0% of quality potential fulfilled.  
 NOTE: depending on what type of scenario you'd like to model, you can quantify "quality" in many different ways (e.g. patient mortality rate vs patient survey responses vs patient retention rates, etc.)
+2. We currently have a crude way of constraining an "ideal" number of residents per patient interaction (w.r.t. quality of patient care). We want to penalize for having too few residents but also penalize for having too many residents per patient interaction, but this was challenging to do nicely with a monotone function. 
 
 Other possible factors to consider (that are currently not accounted for in the model):
 1. Faculty generally prefer teach patient time instead classroom time because they're paid more for patient hours (and many faculty generally like practical teaching better)
