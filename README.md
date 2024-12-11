@@ -1,7 +1,7 @@
 # MedicalResidencyCodesign
 
 ## About this project
-This project was developed as a final semester project for MIT's fall 2024 class, 1.S980 (ACT4E, Applied Category Theory for Engineering Design). It uses a codesign framework and MCDPL code to try to optimally design medical residency programs because **today’s residency programs are no longer meeting the needs of a fast-paced, ever-evolving medical landscape. ** The framework aims to design medical residency within 1 medical specialty and on the timescale of 1 year. 
+This project was developed as a final semester project for MIT's fall 2024 class, 1.S980 (ACT4E, Applied Category Theory for Engineering Design). It uses a codesign framework and MCDPL code to try to optimally design medical residency programs because today’s residency programs are no longer meeting the needs of a fast-paced, ever-evolving medical landscape. The framework aims to design medical residency within 1 medical specialty and on the timescale of 1 year. 
 
 ## Installation/Running the code
 To install and run MCDPL locally: follow the instructions in section C (Software Manual) in the Computational Monotone Co-Design book (https://storage.zuper.ai/sync/zupermind/mcdp-book/z7-prod/test/last/test-job/public.pdf)  
