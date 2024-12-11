@@ -1,7 +1,7 @@
 # MedicalResidencyCodesign
 
 ## About this project
-This project was developed as a final semester project for MIT's fall 2024 class, 1.S980 (ACT4E, Applied Category Theory for Engineering Design). It uses a codesign framework and MCDPL code to try to optimally design medical residency programs.
+This project was developed as a final semester project for MIT's fall 2024 class, 1.S980 (ACT4E, Applied Category Theory for Engineering Design). It uses a codesign framework and MCDPL code to try to optimally design medical residency programs because **today’s residency programs are no longer meeting the needs of a fast-paced, ever-evolving medical landscape. ** The framework aims to design medical residency within 1 medical specialty and on the timescale of 1 year. 
 
 ## Installation/Running the code
 To install and run MCDPL locally: follow the instructions in section C (Software Manual) in the Computational Monotone Co-Design book (https://storage.zuper.ai/sync/zupermind/mcdp-book/z7-prod/test/last/test-job/public.pdf)  
@@ -24,6 +24,8 @@ Resources:
 1. Faculty hours/week (the number of hours/week each faculty member works)
 2. Resident hours/week (the number of hours/week each resident works)
 3. Years to graduate (the number of years of training required to graduate)
+
+This design problem has a feedback loop that takes "number of residents" and "number of patients seen" and returns additional funding to the program. This mimics how hospitals receive funding (primarily from the government) depending on their resident class sizes and how hospitals generate income by seeing/treating patients. 
 
 ### Codesign Diagrams
 Highest Level Design Problem (DP):
@@ -53,9 +55,7 @@ NOTE: depending on what type of scenario you'd like to model, you can quantify "
 
 Other possible factors to consider (that are currently not accounted for in the model):
 1. Faculty generally prefer teach patient time instead classroom time because they're paid more for patient hours (and many faculty generally like practical teaching better)
-2. This model treats every year of residency as having the same structure (in terms of classroom time and faculty/student ratios). In reality, a 4th year resident should be very close to fully independent - which means that there are fewer faculty resources required for a 4th year resident than a 1st year resident. 
-
-7. (FIND SOMEPLACE ELSE FOR THIS) Residents earn a salary of ~$60,000-65,000 a year; this is predominantly funded by GME/Medicare (feedback loop)
+2. This model treats every year of residency as having the same structure (in terms of classroom time and faculty/student ratios). In reality, a 4th year resident should be very close to fully independent - which means that there are fewer faculty resources required for a 4th year resident than a 1st year resident. It is worth noting that if we look at a WHOLE residency program (with 4 graduating classes in the program at any given time - this assumes 4 years to graduation), the resource requirement should be constant across years since the older students and younger student should average each other out.
 
 ## Contact
 Rita Zambrano - mbcz10@mit.edu  
