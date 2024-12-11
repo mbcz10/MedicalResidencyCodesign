@@ -5,7 +5,9 @@ This project was developed as a final semester project for MIT's fall 2024 class
 
 ## Installation/Running the code
 To install and run MCDPL locally: follow the instructions in section C (Software Manual) in the Computational Monotone Co-Design book (https://storage.zuper.ai/sync/zupermind/mcdp-book/z7-prod/test/last/test-job/public.pdf)  
+
    OR  
+   
 To use the web-based MCDP editor and solver (my preferred method): 
 1. Ask for access to the GitHub organization and repo (contact Gioele Zardini or Yujun Huang)
 2. Access the web-editor: https://z7-prod-editor.zuper.ai/editor/
